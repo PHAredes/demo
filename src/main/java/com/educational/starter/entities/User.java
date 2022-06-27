@@ -2,14 +2,24 @@ package com.educational.starter.entities;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 
-@Data @NoArgsConstructor @AllArgsConstructor
+@Builder
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class User implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
     private String name;
     private String email;
