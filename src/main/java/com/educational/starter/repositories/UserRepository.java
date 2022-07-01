@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 //no need to tag as it extends from JPARepository meaning it is already a @Repository
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {}
